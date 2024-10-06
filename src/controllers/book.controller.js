@@ -193,3 +193,15 @@ const getBookByISBNPromise = (req, res) => {
             });
         });
 };
+
+export {
+    createBook,
+    getBooks,
+    getBookByISBN,
+    getBookByAuthor,
+    getBookByTitle,
+    getBookByReview,
+    addReview,
+    deleteReview,
+    getBookByISBNPromise,
+};
