@@ -18,7 +18,7 @@ router.route("/isbn/:isbn").get(getBookByISBN);
 router.route("/author/:author").get(getBookByAuthor);
 router.route("/title/:title").get(getBookByTitle);
 router.route("/review/:isbn").get(getBookByReview);
-router.route("/review/add").post(addReview);
-router.route("/review/delete").delete(deleteReview);
+router.route("/review/add/:isbn").post(addReview);
+router.route("/review/delete/:isbn").delete(deleteReview);
 
 export default router;

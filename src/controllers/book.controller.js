@@ -10,7 +10,7 @@ const createBook = async (req, res) => {
         });
     }
 
-    const book = Book.create({
+    const book = await Book.create({
         isbn,
         author,
         title,
@@ -22,7 +22,7 @@ const createBook = async (req, res) => {
 };
 
 const getBooks = async (req, res) => {
-    const books = Book.find();
+    const books = await Book.find();
 
     return res
         .status(200)
@@ -32,7 +32,7 @@ const getBooks = async (req, res) => {
 const getBookByISBN = async (req, res) => {
     const { isbn } = req.params;
 
-    const book = Book.findOne({
+    const book = await Book.findOne({
         isbn,
     });
 
@@ -50,7 +50,7 @@ const getBookByISBN = async (req, res) => {
 const getBookByAuthor = async (req, res) => {
     const { author } = req.params;
 
-    const books = Book.find({
+    const books = await Book.find({
         author,
     });
 
@@ -68,7 +68,7 @@ const getBookByAuthor = async (req, res) => {
 const getBookByTitle = async (req, res) => {
     const { title } = req.params;
 
-    const books = Book.find({
+    const books = await Book.find({
         title,
     });
 
@@ -87,7 +87,7 @@ const getBookByTitle = async (req, res) => {
 const getBookByReview = async (req, res) => {
     const { isbn } = req.params;
 
-    const book = Book.findOne({
+    const book = await Book.findOne({
         isbn,
     });
 
@@ -107,7 +107,7 @@ const getBookByReview = async (req, res) => {
 const addReview = async (req, res) => {
     const { isbn } = req.params;
 
-    const findBook = Book.findOne({
+    const findBook = await Book.findOne({
         isbn,
     });
 
@@ -136,7 +136,7 @@ const addReview = async (req, res) => {
 const deleteReview = async (req, res) => {
     const { isbn } = req.params;
 
-    const findBook = Book.findOne({
+    const findBook = await Book.findOne({
         isbn,
     });
 

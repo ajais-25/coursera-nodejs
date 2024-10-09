@@ -10,7 +10,7 @@ const register = async (req, res) => {
         });
     }
 
-    const user = User.create({
+    const user = await User.create({
         username,
         password,
     });
